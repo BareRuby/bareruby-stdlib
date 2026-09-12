@@ -1,0 +1,56 @@
+name: Ruby
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'release/*'
+  push:
+    branches:
+      - main
+      - 'release/*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spec:
+    name: spec (bareruby-stdlib)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: gems/bareruby-stdlib
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0'
+      - name: Install dependencies
+        run: bundle install
+      - name: Run the specs
+        run: bundle exec rspec
+
+  rubocop:
+    name: rubocop (bareruby-stdlib)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: gems/bareruby-stdlib
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0'
+      - name: Install dependencies
+        run: bundle install
+      - name: Run RuboCop
+        run: bundle exec rubocop
