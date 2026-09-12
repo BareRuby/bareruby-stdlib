@@ -4,7 +4,7 @@ require_relative "lib/bareruby/stdlib/version"
 
 Gem::Specification.new do |spec|
   spec.name = "bareruby-stdlib"
-  spec.version = Bareruby::Stdlib::VERSION
+  spec.version = BareRuby::Stdlib::VERSION
   spec.authors = ["uproad"]
   spec.email = ["7349115+uproad@users.noreply.github.com"]
 

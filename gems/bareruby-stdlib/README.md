@@ -1,4 +1,4 @@
-# Bareruby::Stdlib
+# BareRuby::Stdlib
 
 TODO: Delete this and the text below, and describe your gem
 
