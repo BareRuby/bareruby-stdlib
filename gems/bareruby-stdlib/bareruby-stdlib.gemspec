@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "The BareRuby standard library declarations, type information, and shared code. " \
                      "This release carries the name and the distribution skeleton only; " \
                      "it implements no functionality."
-  spec.homepage = "https://github.com/uproad/bareruby-stdlib"
+  spec.homepage = "https://github.com/BareRuby/bareruby-stdlib"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 4.0"
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
